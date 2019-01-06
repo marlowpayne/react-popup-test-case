@@ -34,6 +34,11 @@ export class App extends React.Component {
   constructor(props) {
     super(props)
 
+    this.openPopup = this.openPopup.bind(this)
+    this.closePopup = this.closePopup.bind(this)
+    this.togglePopup = this.togglePopup.bind(this)
+    this.toggleEventListener = this.toggleEventListener.bind(this)
+
     this.state = {
       isPopupOpen: false,
       useDocumentInsteadOfWindow: false,
@@ -56,7 +61,7 @@ export class App extends React.Component {
     }
   }
 
-  openPopup = () => {
+  openPopup() {
     if (this.hasMounted) {
       const { useDocumentInsteadOfWindow } = this.state
 
@@ -72,7 +77,7 @@ export class App extends React.Component {
     }
   }
 
-  closePopup = () => {
+  closePopup() {
     if (this.hasMounted) {
       const { useDocumentInsteadOfWindow } = this.state
 
@@ -88,7 +93,7 @@ export class App extends React.Component {
     }
   }
 
-  togglePopup = () => {
+  togglePopup() {
     const { isPopupOpen } = this.state
     if (isPopupOpen) {
       this.closePopup()
@@ -97,7 +102,7 @@ export class App extends React.Component {
     }
   }
 
-  toggleEventListener = () => {
+  toggleEventListener() {
     const currentVal = this.state.useDocumentInsteadOfWindow
     this.setState({
       useDocumentInsteadOfWindow: !currentVal
