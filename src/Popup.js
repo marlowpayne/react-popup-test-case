@@ -36,9 +36,11 @@ export const Popup = ({ isOpen }) => {
         <Typography variant="headline" component="h2">
           This is a simple popup
         </Typography>
+
         <Typography component="p">
           Click anywhere to dismiss it
         </Typography>
+
         <LoremIpsum>
           {loremIpsum.text}
         </LoremIpsum>

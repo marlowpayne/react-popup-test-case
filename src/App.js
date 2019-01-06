@@ -15,14 +15,17 @@ const Wrapper = styled.div`
   margin: 0;
   padding: 0;
 `
+
 const ButtonsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `
+
 const TopMargin = styled.div`
   margin-top: ${ spacing.unit };
 `
+
 const Mono = styled.span`
   font-family: monospace;
 `
@@ -138,10 +141,12 @@ export class App extends React.Component {
               <Button variant="contained" color="primary" onClick={this.togglePopup}>
                 Toggle Popup
               </Button>
+
               <TopMargin>
                 <Button variant="contained" color="secondary" onClick={this.toggleEventListener}>
                   Toggle Event Listener between Document and Window
                 </Button>
+
                 <Typography component="p">
                   Click event listener for closing the popup currently bound to:
                   <Mono>{currentClickBinding}</Mono>
